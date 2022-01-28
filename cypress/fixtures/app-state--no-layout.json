@@ -1,0 +1,49 @@
+{
+  "vars": {
+    "counter": 0
+  },
+  "calls": {},
+  "children": {
+    "slack": {
+      "vars": {},
+      "calls": {},
+      "children": {},
+      "works": {},
+      "changes": {},
+      "storage": {
+        "shared_access": {},
+        "root": "/home/alec/work/PyTorchLightning/lightning/storage/1234/slack",
+        "transfer_files": {}
+      }
+    }
+  },
+  "works": {
+    "pickle_checker": {
+      "vars": {},
+      "calls": {
+        "run:d9b6ab11eb69fd6976bf7e7d495d54f472b09ba2c81523584baf4e7dbf8d4a7e": {
+          "name": "root.pickle_checker",
+          "call_hash": "run:d9b6ab11eb69fd6976bf7e7d495d54f472b09ba2c81523584baf4e7dbf8d4a7e",
+          "ret": false
+        }
+      },
+      "changes": {},
+      "storage": {
+        "shared_access": {},
+        "root": "/home/alec/work/PyTorchLightning/lightning/storage/1234/pickle_checker",
+        "transfer_files": {}
+      }
+    }
+  },
+  "changes": {
+    "counter": {
+      "from": 3,
+      "to": 2
+    }
+  },
+  "storage": {
+    "shared_access": {},
+    "root": "/home/alec/work/PyTorchLightning/lightning/storage/1234",
+    "transfer_files": {}
+  }
+}
