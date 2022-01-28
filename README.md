@@ -1,3 +1,5 @@
+![Lightning.ai Logo](https://raw.githubusercontent.com/gridai/lightning-ui/master/src/resources/images/lighting-logo-with-text.svg?token=GHSAT0AAAAAABQG3SDLWTKOT2Y7ESSAABYIYP5DXSA "Lightning.ai")
+
 # Lightning UI
 
 This project contains the source code for the Lightning app frontend.
