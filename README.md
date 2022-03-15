@@ -25,6 +25,12 @@ All commands are defined in the `scripts` section of the `package.json` file.
 $ yarn install
 ```
 
+**Install pre-commit hooks:**
+
+```
+$ yarn husky install
+```
+
 **Run tests:**
 
 ```
@@ -50,6 +56,7 @@ $ cd $HOME
 $ git clone git@github.com:gridai/lightning-ui.git
 $ cd lightning-ui
 $ yarn install
+$ yarn husky install
 $ yarn build
 ```
 
