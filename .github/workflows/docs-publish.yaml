@@ -3,8 +3,7 @@ on:
   push:
     branches:
       - "master"
-    paths:
-      - src/design-system
+  workflow_dispatch:
 
 jobs:
   build-docs:
