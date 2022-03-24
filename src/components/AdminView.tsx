@@ -1,23 +1,11 @@
 import React from "react";
-import { Chip, styled } from "@mui/material";
 
 import AdminMenu from "./AdminMenu";
 import useLightningState from "hooks/useLightningState";
+import { Box } from "design-system/components";
 
 import LightningLogo from "resources/images/lightning-logo-with-text.svg";
 import AdminTabs from "./AdminTabs";
-
-const Wrapper = styled("div")({
-  margin: "0 auto",
-  maxWidth: "1280px",
-});
-
-const Header = styled("div")({
-  display: "flex",
-  justifyContent: "space-between",
-  alignItems: "center",
-  padding: "10px",
-});
 
 export default function AdminView() {
   const lightningState = useLightningState();
@@ -31,13 +19,10 @@ export default function AdminView() {
   }
 
   return (
-    <Wrapper>
-      <Header>
-        <img src={LightningLogo} alt="Lightning Logo" />
-        <Chip label="Local" color="error" />
-      </Header>
+    <Box margin={"0 auto"} maxWidth={"1280px"}>
+      <Box component={"img"} src={LightningLogo} alt="Lightning Logo" padding={1.25} />
       <AdminMenu />
       <AdminTabs />
-    </Wrapper>
+    </Box>
   );
 }
