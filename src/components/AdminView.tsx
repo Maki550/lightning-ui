@@ -1,11 +1,11 @@
 import React from "react";
-import { Outlet } from "react-router-dom";
 import { Chip, styled } from "@mui/material";
 
 import AdminMenu from "./AdminMenu";
 import useLightningState from "hooks/useLightningState";
 
 import LightningLogo from "resources/images/lightning-logo-with-text.svg";
+import AdminTabs from "./AdminTabs";
 
 const Wrapper = styled("div")({
   margin: "0 auto",
@@ -37,7 +37,7 @@ export default function AdminView() {
         <Chip label="Local" color="error" />
       </Header>
       <AdminMenu />
-      <Outlet />
+      <AdminTabs />
     </Wrapper>
   );
 }
