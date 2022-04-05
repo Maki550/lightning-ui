@@ -19,7 +19,7 @@ describe("AdminMenu", () => {
       mount(<AdminMenu />);
 
       cy.wait("@getState");
-
+      cy.wait(1);
       cy.contains("Run").should("be.enabled");
     });
 
@@ -27,7 +27,10 @@ describe("AdminMenu", () => {
       mount(<AdminMenu />);
 
       cy.wait("@getState");
-      cy.contains("Run").click();
+
+      cy.wait(1);
+
+      cy.get("button .MuiButton-startIcon").click();
 
       cy.wait("@postState");
     });
@@ -42,18 +45,18 @@ describe("AdminMenu", () => {
       }).as("postState");
     });
 
-    it("the 'Stop' button is enabled", () => {
+    it("the 'Running Locally' button is enabled", () => {
       mount(<AdminMenu />);
 
       cy.wait("@getState");
-      cy.contains("Stop").should("be.enabled");
+      cy.contains("Running Locally").should("be.enabled");
     });
 
-    it("clicking the 'Stop' button sends an API request to stop the app", () => {
+    it("clicking the 'Running Local' button sends an API request to stop the app", () => {
       mount(<AdminMenu />);
 
       cy.wait("@getState");
-      cy.contains("Stop").click();
+      cy.contains("Running Locally").click();
 
       cy.wait("@postState");
     });

@@ -1,6 +1,5 @@
 import React, { ReactNode } from "react";
 import { Table } from "../../design-system/components";
-import formatDate from "../utils/formatDate";
 import ComponentStatus, { StatusEnum } from "./Status";
 
 export type ComponentEntity = {
@@ -8,7 +7,7 @@ export type ComponentEntity = {
   name: string;
   type: string;
   provider: string;
-  lastStartTime?: Date;
+  lastStartTime?: string;
 };
 
 export type ComponentTableProps = {
@@ -22,7 +21,7 @@ const getComponentCell = (component: ComponentEntity): ReactNode[] => {
     component.name,
     component.type,
     component.provider,
-    component.lastStartTime ? formatDate(component.lastStartTime) : "Not yet run",
+    component.lastStartTime ?? "--",
   ];
   return cell;
 };
