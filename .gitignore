@@ -12,6 +12,7 @@
 
 # production
 /build
+build.tar.gz
 
 # design system documentation
 /storybook-static
