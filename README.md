@@ -78,6 +78,20 @@ $ lighting start app ./examples/layout/demo.py
 The `lightning` CLI will now serve the frontend code at `http://localhost:7501`. Any time you make changes to the
 frontend code, simply run `yarn build` again, and refresh the browser window to see the changes.
 
+## How do I release a new local UI version for the Lightning.ai framework?
+
+The `lightning-ui` release process is fully manual right now:
+
+```shell
+$ yarn build
+$ tar -czvf build.tar.gz ./build
+```
+
+Then, upload the file to [this bucket](https://console.cloud.google.com/storage/browser/grid-packages/lightning-ui/v0.0.0;tab=objects?pli=1&prefix=&forceOnObjectsSortingFiltering=false) (overwrite existing).
+
+New releases of the Lightning.ai framework happen automatically from a GitHub action with every merge to `master`.
+This will download and include the `lightning-ui` that is in the bucket above
+
 ## Design System Documentation
 
 https://congenial-chainsaw-5d118edf.pages.github.io/?path=/story/introduction--page
