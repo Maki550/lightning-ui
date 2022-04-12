@@ -11,8 +11,7 @@ export type AppDetailsProps = {
   onEdit?: () => void;
 };
 
-const defaultDescription =
-  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse nec purus mattis, dictum augue sed, viverra ex. Integer luctus eleifend lorem, et porttitor nulla.";
+const defaultDescription = "No app description";
 const defaultTags = ["Artificial Intelligence", "Research"];
 
 const AppDetails = ({ description = defaultDescription, tags = defaultTags, ...props }: AppDetailsProps) => {
