@@ -3,6 +3,7 @@ import { CircleOutlined, Circle } from "../../design-system/icons";
 
 export enum StatusEnum {
   NOT_YET_RUN = "Not yet run",
+  NOT_STARTED = "Not started",
   UNSPECIFIED = "Unspecified",
   BUILDING = "Building",
   REQUESTING = "Requesting",
@@ -21,6 +22,7 @@ export enum StatusEnum {
 
 const StatusColor: Record<StatusEnum, string> = {
   [StatusEnum.NOT_YET_RUN]: "#B3B9BB",
+  [StatusEnum.NOT_STARTED]: "#B3B9BB",
   [StatusEnum.UNSPECIFIED]: "#B3B9BB",
   [StatusEnum.BUILDING]: "#792EE5",
   [StatusEnum.REQUESTING]: "#792EE5",
@@ -44,7 +46,7 @@ export type StatusProps = {
 const Status = (props: StatusProps) => {
   const iconStyle = { fontSize: "14px", color: StatusColor[props.status] };
   const statusIcon =
-    props.status === StatusEnum.NOT_YET_RUN ? <CircleOutlined sx={iconStyle} /> : <Circle sx={iconStyle} />;
+    [StatusEnum.NOT_YET_RUN, StatusEnum.NOT_STARTED].includes(props.status) ? <CircleOutlined sx={iconStyle} /> : <Circle sx={iconStyle} />;
   return (
     <Stack direction={"row"} alignItems={"center"} spacing={1}>
       {statusIcon} <Box>{props.status.toString()}</Box>
