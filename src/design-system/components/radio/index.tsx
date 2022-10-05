@@ -5,15 +5,15 @@ import { CheckCircle, Dangerous, Info, Warning } from "@mui/icons-material";
 import { FormControlLabel, Stack } from "../";
 import FormControlContainer, { FormControlContainerProps } from "../form-control/FormControlContainer";
 import FormStatusText from "../form-status-text";
-import CheckboxBase, { CheckboxOnlyProps } from "./CheckboxBase";
+import RadioBase, { RadioOnlyProps } from "./RadioBase";
 
-export type CheckboxProps = {
+export type RadioProps = {
   optional?: boolean;
   tooltip?: string;
   description: React.ReactElement;
   status?: "success" | "warning" | "error" | "info";
   statusText?: string;
-} & CheckboxOnlyProps &
+} & RadioOnlyProps &
   FormControlContainerProps;
 
 const statusColor = {
@@ -30,19 +30,14 @@ const statusIcon = {
   error: <Dangerous sx={{ color: statusColor.error }} />,
 };
 
-const Checkbox = (props: CheckboxProps) => {
+const Radio = (props: RadioProps) => {
   const { statusText, status } = props;
   return (
     <FormControlContainer {...props}>
       <FormControlLabel
         disabled={props.disabled}
         control={
-          <CheckboxBase
-            checked={props.checked}
-            onChange={props.onChange}
-            size={props.size}
-            disabled={props.disabled}
-          />
+          <RadioBase checked={props.checked} onChange={props.onChange} size={props.size} disabled={props.disabled} />
         }
         label={props.description}
         sx={{
@@ -81,4 +76,4 @@ const Checkbox = (props: CheckboxProps) => {
   );
 };
 
-export default Checkbox;
+export default Radio;

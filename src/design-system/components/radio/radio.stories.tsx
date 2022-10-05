@@ -1,10 +1,10 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
-import Checkbox, { CheckboxProps } from ".";
+import Radio, { RadioProps } from ".";
 
 export default {
-  title: "Components/Checkbox",
-  component: Checkbox,
+  title: "Components/Radio",
+  component: Radio,
   parameters: {
     design: {
       type: "figma",
@@ -12,11 +12,11 @@ export default {
     },
   },
   args: {
-    label: "type of checkbox",
+    label: "type of radio",
     tooltip: "tooltip message",
     helperText: "some helper text",
     statusText: "status text",
-    description: <>some description for the checkbox</>,
+    description: <>some description for the radio</>,
     fullWidth: false,
   },
   argTypes: {
@@ -41,12 +41,12 @@ export default {
       control: "select",
       options: [undefined, "small", "medium"],
     },
-    onChange: { action: "checkbox Clicked!" },
+    onChange: { action: "radio Clicked!" },
   },
-} as ComponentMeta<typeof Checkbox>;
+} as ComponentMeta<typeof Radio>;
 
-const Template: ComponentStory<any> = ({ ...args }: CheckboxProps) => {
-  return <Checkbox {...args} />;
+const Template: ComponentStory<any> = ({ ...args }: RadioProps) => {
+  return <Radio {...args} />;
 };
 
 export const Playground = Template.bind({});
