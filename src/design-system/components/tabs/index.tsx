@@ -9,7 +9,7 @@ import { Box, Divider, SxProps, Theme } from "../";
 
 type TabItemMetadata = {
   title: MuiTabProps["label"];
-  icon: MuiTabProps["icon"];
+  icon?: MuiTabProps["icon"];
   disabled?: boolean;
   tooltip?: string;
 };
